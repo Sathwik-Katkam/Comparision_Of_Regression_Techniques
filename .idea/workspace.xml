@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="bdcf094d-8145-4fad-8eae-a97f9291490f" name="Changes" comment="" />
+    <list default="true" id="bdcf094d-8145-4fad-8eae-a97f9291490f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bridge_regression/bridge_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bridge_regression/bridge_regression_run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transformed_regression/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transformed_regression/transformed_regression.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transformed_regression/transformed_regression_run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Comparision_Of_Regression_Techniques.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Comparision_Of_Regression_Techniques.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/seoul_bike_sharing_demand/seoul_bike_sharing_demand.py" beforeDir="false" afterPath="$PROJECT_DIR$/datasets/seoul_bike_sharing_demand/seoul_bike_sharing_demand.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="32cLRBcpj8dtzX8zTfe6MBnbMsj" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -18,7 +44,18 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -26,11 +63,12 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-b598e85cdad2-JavaScript-PY-252.25557.178" />
-        <option value="bundled-python-sdk-ce6832f46686-7b97d883f26b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.25557.178" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.419" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.419" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="bdcf094d-8145-4fad-8eae-a97f9291490f" name="Changes" comment="" />
@@ -38,6 +76,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757714903092</updated>
+      <workItem from="1758040858728" duration="325000" />
+      <workItem from="1758041235981" duration="9593000" />
     </task>
     <servers />
   </component>

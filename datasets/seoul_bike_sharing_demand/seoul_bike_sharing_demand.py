@@ -59,7 +59,7 @@ def prepare_bike_data():
     df = data_cleaning.one_hot_encode(['Seasons', 'Holiday', 'Functioning Day'], df)
 
     # Scale numeric features
-    df = data_cleaning.standardize_data(df)
+    #df = data_cleaning.standardize_data(df)
 
     print("\n=== Processing Complete ===")
 
