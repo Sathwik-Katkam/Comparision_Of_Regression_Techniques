@@ -85,7 +85,7 @@ def execute_all_datasets():
     print("\n=== Auto MPG Regression Analysis ===")
     analyze_auto_mpg()
     print("\n=== Energy Efficieny Regression Analysis ===")
-    # analyze_energy_efficiency()
+    analyze_energy_efficiency()
     print("\n=== Seoul Bike Regression Analysis ===")
     analyze_seoul_bike()
     print("\n=== Boston Housing Regression Analysis ===")

@@ -1,0 +1,4 @@
+,Selected Features,R²,Adjusted R²,Num Features
+Forward Selection,"['Heating Load', 'Overall Height', 'Glazing Area', 'Roof Area', 'Glazing Area Distribution', 'Orientation', 'Wall Area', 'Relative Compactness']",0.9586074792409784,0.9581711944371943,8
+Backward Selection,"['Relative Compactness', 'Surface Area', 'Wall Area', 'Roof Area', 'Overall Height', 'Glazing Area', 'Heating Load']",0.9578668945868377,0.9574788265106638,7
+Stepwise Selection,"['Heating Load', 'Overall Height', 'Roof Area', 'Surface Area', 'Relative Compactness', 'Wall Area', 'Glazing Area']",0.9578668945868377,0.9574788265106638,7

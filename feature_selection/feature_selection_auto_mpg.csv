@@ -1,0 +1,4 @@
+,Selected Features,R²,Adjusted R²,Num Features
+Forward Selection,"['weight', 'model_year', 'origin', 'displacement', 'horsepower', 'cylinders', 'acceleration']",0.8214780764810599,0.8182237705835792,7
+Backward Selection,"['cylinders', 'displacement', 'horsepower', 'weight', 'acceleration', 'model_year', 'origin']",0.8214780764810599,0.8182237705835792,7
+Stepwise Selection,"['weight', 'displacement', 'horsepower', 'cylinders', 'model_year', 'origin', 'acceleration']",0.8214780764810599,0.8182237705835792,7

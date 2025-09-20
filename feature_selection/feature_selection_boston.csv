@@ -1,0 +1,4 @@
+,Selected Features,R²,Adjusted R²,Num Features
+Forward Selection,"['LSTAT', 'RM', 'PTRATIO', 'DIS', 'NOX', 'CHAS', 'B', 'ZN', 'CRIM', 'RAD', 'TAX', 'INDUS', 'AGE']",0.7406426641094094,0.7337897263724629,13
+Backward Selection,"['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT']",0.7406426641094095,0.733789726372463,13
+Stepwise Selection,"['LSTAT', 'RM', 'PTRATIO', 'INDUS', 'TAX', 'NOX', 'CRIM', 'RAD', 'AGE', 'ZN', 'B', 'DIS', 'CHAS']",0.7406426641094094,0.7337897263724629,13

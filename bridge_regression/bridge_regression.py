@@ -1,7 +1,27 @@
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.model_selection import cross_val_score, KFold
 from util import metrics
+
+
+
+
+def plot_true_vs_predicted(true_vals, pred_vals, algorithm_label):
+    true_vals = np.asarray(true_vals).ravel()
+    pred_vals = np.asarray(pred_vals).ravel()
+
+    plt.figure(figsize=(10, 7))
+    sns.scatterplot(x=true_vals, y=pred_vals, color="blue")
+    min_val, max_val = np.min(true_vals), np.max(true_vals)
+    plt.plot([min_val, max_val], [min_val, max_val], '--', color='red')
+    plt.xlabel('True Values')
+    plt.ylabel('Predicted Values')
+    plt.title(f'{algorithm_label} - True vs Predicted')
+    plt.tight_layout()
+    plt.show()
+
 
 class BridgeRegressor(BaseEstimator, RegressorMixin):
     def __init__(self, alpha=0.1, q=0.5, lr=1e-4, max_iter=20000, tol=1e-6, fit_intercept=True):
@@ -92,6 +112,7 @@ class BridgeRegressor(BaseEstimator, RegressorMixin):
         yhat_centered = (self.intercept_std_ + Z @ self.w_std_)
         return yhat_centered + self.y_mean_
 
+
 def train_bridge_model(train_features, test_features, train_target, test_target, alpha=0.1, q=0.5):
     model = BridgeRegressor(alpha=alpha, q=q, lr=1e-4, max_iter=20000, tol=1e-6, fit_intercept=True)
     model.fit(train_features, train_target)
@@ -105,7 +126,12 @@ def train_bridge_model(train_features, test_features, train_target, test_target,
     print("Training Performance:", train_metrics)
     print("Testing Performance:", test_metrics)
 
+
+    plot_true_vs_predicted(test_target, test_pred, f'Bridge Regression (q={q})')
+
+
     return model
+
 
 def evaluate_cross_validation(model, features, target):
     kf = KFold(n_splits=5, shuffle=True, random_state=42)

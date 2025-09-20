@@ -1,3 +1,5 @@
+# symbolic_regression/symbolic_regression_run.py
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -6,13 +8,8 @@ from datasets.energy_efficiency import energy_efficiency
 from datasets.seoul_bike_sharing_demand import seoul_bike_sharing_demand
 from datasets.boston import boston
 
+from symbolic_regression import train_symbolic_model
 
-from transformed_regression import (
-    train_log1p_model,
-    train_sqrt_model,
-    train_boxcox_model,
-    train_yeojohnson_model,
-)
 
 # ----- feature/target extractors -----
 def extract_auto_mpg_features():
@@ -46,12 +43,9 @@ def analyze_auto_mpg():
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 
     results = {}
-    _, r = train_log1p_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_sqrt_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_boxcox_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_yeojohnson_model(train_X, test_X, train_y, test_y); results.update(r)
-
-    print_results_table("Auto MPG - Transformed Regressions", results)
+    _, r = train_symbolic_model(train_X, test_X, train_y, test_y, label="Symbolic Regression (Auto MPG)")
+    results.update(r)
+    print_results_table("Auto MPG - Symbolic Regression", results)
 
 
 def analyze_energy_efficiency():
@@ -64,11 +58,9 @@ def analyze_energy_efficiency():
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 
     results = {}
-    _, r = train_log1p_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_sqrt_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_boxcox_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_yeojohnson_model(train_X, test_X, train_y, test_y); results.update(r)
-    print_results_table("Energy Efficiency - Heating Load (Transformed)", results)
+    _, r = train_symbolic_model(train_X, test_X, train_y, test_y, label="Symbolic Regression (Energy - Heating)")
+    results.update(r)
+    print_results_table("Energy Efficiency - Heating Load (Symbolic)", results)
     print()
 
     # Cooling Load
@@ -78,11 +70,9 @@ def analyze_energy_efficiency():
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 
     results = {}
-    _, r = train_log1p_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_sqrt_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_boxcox_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_yeojohnson_model(train_X, test_X, train_y, test_y); results.update(r)
-    print_results_table("Energy Efficiency - Cooling Load (Transformed)", results)
+    _, r = train_symbolic_model(train_X, test_X, train_y, test_y, label="Symbolic Regression (Energy - Cooling)")
+    results.update(r)
+    print_results_table("Energy Efficiency - Cooling Load (Symbolic)", results)
 
 
 def analyze_seoul_bike():
@@ -90,12 +80,9 @@ def analyze_seoul_bike():
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 
     results = {}
-    _, r = train_log1p_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_sqrt_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_boxcox_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_yeojohnson_model(train_X, test_X, train_y, test_y); results.update(r)
-
-    print_results_table("Seoul Bike - Transformed Regressions", results)
+    _, r = train_symbolic_model(train_X, test_X, train_y, test_y, label="Symbolic Regression (Seoul Bike)")
+    results.update(r)
+    print_results_table("Seoul Bike - Symbolic Regression", results)
 
 
 def analyze_boston_housing():
@@ -103,12 +90,9 @@ def analyze_boston_housing():
     train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=42)
 
     results = {}
-    _, r = train_log1p_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_sqrt_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_boxcox_model(train_X, test_X, train_y, test_y); results.update(r)
-    _, r = train_yeojohnson_model(train_X, test_X, train_y, test_y); results.update(r)
-
-    print_results_table("Boston Housing - Transformed Regressions", results)
+    _, r = train_symbolic_model(train_X, test_X, train_y, test_y, label="Symbolic Regression (Boston Housing)")
+    results.update(r)
+    print_results_table("Boston Housing - Symbolic Regression", results)
 
 
 def print_results_table(title, results):
@@ -119,13 +103,13 @@ def print_results_table(title, results):
 
 
 def execute_all_datasets():
-    print("\n=== Auto MPG Transformed Regressions ===")
+    print("\n=== Auto MPG – Symbolic Regression ===")
     analyze_auto_mpg()
-    print("\n=== Energy Efficiency Transformed Regressions ===")
+    print("\n=== Energy Efficiency – Symbolic Regression ===")
     analyze_energy_efficiency()
-    print("\n=== Seoul Bike Transformed Regressions ===")
+    print("\n=== Seoul Bike – Symbolic Regression ===")
     analyze_seoul_bike()
-    print("\n=== Boston Housing Transformed Regressions ===")
+    print("\n=== Boston Housing – Symbolic Regression ===")
     analyze_boston_housing()
 
 

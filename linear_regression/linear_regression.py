@@ -3,7 +3,26 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.model_selection import cross_val_score, KFold
 from util import metrics
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+
+def plot_true_vs_predicted(true_vals, pred_vals, algorithm_label):
+    """
+    Plots true vs predicted values.
+    """
+    # ensure 1D vectors for seaborn
+    true_vals = np.asarray(true_vals).ravel()
+    pred_vals = np.asarray(pred_vals).ravel()
+
+    plt.figure(figsize=(10, 7))
+    sns.scatterplot(x=true_vals, y=pred_vals, color="blue")
+    min_val, max_val = np.min(true_vals), np.max(true_vals)
+    plt.plot([min_val, max_val], [min_val, max_val], '--', color='red')
+    plt.xlabel('True Values')
+    plt.ylabel('Predicted Values')
+    plt.title(f'{algorithm_label} - True vs Predicted')
+    plt.show()
 
 
 def train_linear_model(train_features, test_features, train_target, test_target):
@@ -33,6 +52,9 @@ def train_linear_model(train_features, test_features, train_target, test_target)
     # Print results
     print("Training Performance:", train_metrics)
     print("Testing Performance:", test_metrics)
+
+    # Visualization
+    plot_true_vs_predicted(test_target, test_predictions, 'Linear Regression')
 
     return model
 
